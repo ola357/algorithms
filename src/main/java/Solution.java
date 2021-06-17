@@ -54,6 +54,8 @@ public class Solution {
         while (!ordersByArrivalTime.isEmpty() || !ordersByCookTimePriority.isEmpty()) {
             if (ordersByCookTimePriority.isEmpty()) {
                 // start cooking OR jump to next arrival time
+                //[0,1,2]
+                //[3,9,6]
                 Entry<Long, List<Order>> firstEntry = ordersByArrivalTime.pollFirstEntry();
                 ordersByCookTimePriority.addAll(firstEntry.getValue());
                 elapsedTime = firstEntry.getKey();
